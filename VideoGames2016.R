@@ -12,7 +12,7 @@ if(!require(randomForest)) install.packages("randomForest", repos = "http://cran
 if(!require(glmnet)) install.packages("glmnet", repos = "http://cran.us.r-project.org")
 
 # Download csv file from Github
-mydata <- read.csv("https://raw.githubusercontent.com/IvyYW/VideoGamesSales/master/Video_Games_Sales_as_at_22_Dec_2016.csv",header=TRUE)
+mydata <- read.csv("https://raw.githubusercontent.com/IvyYW/Video_Games_2016/master/Video_Games_2016.csv",header=TRUE)
 
 # Drop NA, unused data and convert year to numeric
 mydata_clean <- mydata %>% drop_na() %>% 
