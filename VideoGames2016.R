@@ -77,10 +77,12 @@ Year_Line <- train_set %>% group_by(Year_of_Release) %>%
   ggplot(aes(x=Year_of_Release, y = avg_score)) + 
   geom_line() 
 
+# User Count v User Score
 User_Count_point <- train_set %>% ggplot(aes(x = User_Count, y = User_Score)) +
   geom_point() +
   geom_smooth(method = "lm", span = 0.3)
 
+# Critic Score v User Score
 Critic_Score_point <- train_set %>% ggplot(aes(x = Critic_Score, y = User_Score)) +
   geom_point() +
   geom_smooth(method = "lm", span = 0.3)
@@ -97,7 +99,7 @@ pred_1 <- rep(mu, nrow(test_set))
 # compute RMSE
 rmse_1 <- RMSE(test_set$User_Score, pred_1)
 # add value to results table
-rmse_results <- tibble(method = "Average Score", RMSE = rmse_1)
+rmse_results <- tibble(method = "Model 1: Average Score", RMSE = rmse_1)
 
 #####################################################
 # Model 2: Average Sales + Platform -> Y = mu + b_p
